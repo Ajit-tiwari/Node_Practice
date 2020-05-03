@@ -20,13 +20,13 @@ app.use((req,res,next) => {
     next();
 });
 
-app.use((req,res,next)=>{
-    res.render('maintainance.hbs')
-});
+// app.use((req,res,next)=>{
+//     res.render('maintainance.hbs')
+// });
 
 app.use(express.static(__dirname + '/public'));
 app.get('/',(req,res)=>{
-    res.render('about.hbs', {
+    res.render('home.hbs', {
         title: 'Home'
     });
 });
@@ -35,6 +35,10 @@ app.get('/about',(req,res)=>{
     res.render('about.hbs',{
         title: 'About us'
     });
+});
+
+app.get('/Projects',(req,res)=>{
+    res.render('Projects.hbs');
 });
 
 app.get('/bad',(req,res)=>{
